@@ -55,5 +55,60 @@ wsl --unregister Ubuntu
 ## Error común
 Si aparece el error 0x80370102, habilita la virtualización en la BIOS.
 
+1) CAUSA 1 (MUY común): Hyper-V NO está activo aunque WSL sí
+
+Aunque no uses Hyper-V, WSL2 lo necesita por debajo.
+
+Haz esto:
+
+Win + R → optionalfeatures
+  
+Asegúrate de que estén TODAS marcadas:
+
+☑ Windows Subsystem for Linux
+
+☑ Virtual Machine Platform
+
+☑ Hyper-V
+
+Hyper-V Platform
+
+Hyper-V Management Tools
+
+📌 Sí, aunque no lo uses.
+
+👉 Reinicia obligatorio.
+
+2) CAUSA 2: La virtualización está activada en BIOS, pero Windows NO la está usando
+
+Vamos a confirmarlo por comando, no por intuición.
+
+Abre CMD como administrador y ejecuta:
+systeminfo | findstr /i "Virtual"
+
+Debes ver:
+Virtualization Enabled In Firmware: Yes
+
+
+❌ Si dice No, el BIOS no quedó guardado correctamente
+❌ Si no aparece nada → Windows no detecta virtualización
+
+👉 En ese caso:
+
+Vuelve a BIOS
+
+Desactiva virtualización
+
+Guarda
+
+Reinicia
+
+Vuelve a entrar a BIOS
+
+Actívala de nuevo
+
+Guarda y sal
+
+
 ## Conclusión
 Ubuntu en WSL es ideal para aprender Linux y desarrollar sin salir de Windows.
