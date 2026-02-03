@@ -192,9 +192,4 @@ ls -l /home/estudiante/practica.txt
 
 ---
 
-## 8. Preguntas de reflexión
 
-- ¿Cuál es la diferencia entre `useradd` y `adduser`?
-- ¿Por qué no es recomendable trabajar siempre como root?
-- ¿Qué significa el permiso 755?
-- ¿Cuál es la diferencia entre `su` y `sudo`?
