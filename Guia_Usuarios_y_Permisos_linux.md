@@ -152,6 +152,10 @@ Practicar la gestión de usuarios y permisos en Linux.
 ```bash
 sudo useradd -m estudiante
 sudo passwd estudiante
+usermod -aG sudo estudiante
+
+groups estudiante
+
 ```
 
 2. Crear un archivo como root
